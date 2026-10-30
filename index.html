@@ -212,15 +212,41 @@
         </button>
 
         <div class="order-details" id="peri">
-          <h4>Order Summary ❤️</h4>
-          <div class="detail-row">
-            <span>Quantity</span>
-            <strong>1 Packet</strong>
-          </div>
-          <div class="detail-row">
-            <span>Weight</span>
-            <strong>100 Grams</strong>
-          </div>
+        <div class="order-details" id="peri">
+  <h4>Order Summary ❤️</h4>
+
+  <div class="quantity-control">
+    <button onclick="changeQty('peri', -1)">−</button>
+    <span id="qty-peri">1</span>
+    <button onclick="changeQty('peri', 1)">+</button>
+  </div>
+
+  <div class="detail-row">
+    <span>Price per packet</span>
+    <strong>₹50</strong>
+  </div>
+
+  <div class="detail-row">
+    <span>Selected quantity</span>
+    <strong id="count-peri">1 Packet</strong>
+  </div>
+
+  <div class="detail-row">
+    <span>Total weight</span>
+    <strong id="weight-peri">100 Grams</strong>
+  </div>
+
+  <div class="detail-row">
+    <span>Total Price</span>
+    <strong id="total-peri">₹50</strong>
+  </div>
+
+  <button class="instagram-btn" disabled>
+    DM FOR ORDER ON INSTAGRAM
+  </button>
+
+  <p class="coming-soon">Instagram ordering coming soon!</p>
+</div>
           <div class="detail-row">
             <span>Total Price</span>
             <strong>₹50</strong>
