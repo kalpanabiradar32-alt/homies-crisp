@@ -5,88 +5,152 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Homie's Crisp | Homemade Banana Chips</title>
+
   <style>
     * { box-sizing: border-box; }
-    
-body {
- margin: 0;
- font-family: 'Trebuchet MS', Arial, sans-serif;
- background: #171717;
- color: #ffffff;
-}
-  header {
-  background: #171717;
-  color: #f4c75a;
-  text-align: center;
-  padding: 32px 15px;
-  }
+
+    body {
+      margin: 0;
+      font-family: 'Trebuchet MS', Arial, sans-serif;
+      background: #171717;
+      color: #ffffff;
+    }
+
+    header {
+      background: #171717;
+      color: #f4c75a;
+      text-align: center;
+      padding: 32px 15px;
+    }
+
     header h1 {
       margin: 0;
       font-size: 36px;
     }
+
     header p { margin-bottom: 0; }
+
     .hero {
       text-align: center;
       padding: 38px 18px;
       background: #f7df9a;
+      color: #171717;
     }
+
     .hero h2 { font-size: 28px; }
     .hero p { line-height: 1.6; }
+
     .products {
       padding: 25px 16px;
       max-width: 850px;
       margin: auto;
     }
+
     .products h2 { text-align: center; }
+
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
       gap: 16px;
     }
-    
-.card {
-  background: #242424;
-  color: #ffffff;
-  border-radius: 14px;
-  padding: 22px 15px;
-  text-align: center;
-  box-shadow: 0 3px 12px #00000030;
-  border: 1px solid #d4af37;
-}
-  
-    .emoji { font-size: 48px; }
+
+    .card {
+      background: #242424;
+      color: #ffffff;
+      border-radius: 14px;
+      padding: 22px 15px;
+      text-align: center;
+      box-shadow: 0 3px 12px #00000030;
+      border: 1px solid #d4af37;
+    }
+
     .price {
       font-size: 24px;
       font-weight: bold;
-      color: #174b32;
+      color: #f4c75a;
     }
+
     .order {
       display: inline-block;
       background: #174b32;
       color: white;
       padding: 12px 18px;
       border-radius: 8px;
+      border: none;
       text-decoration: none;
       font-weight: bold;
+      cursor: pointer;
+      font-size: 15px;
     }
-    .note {
-      text-align: center;
+
+    .order:hover {
+      background: #216b46;
+    }
+
+    .order-details {
+      display: none;
+      margin-top: 18px;
       padding: 15px;
-      color: #625b48;
+      background: #171717;
+      border: 1px solid #d4af37;
+      border-radius: 10px;
+    }
+
+    .order-details.show {
+      display: block;
+    }
+
+    .order-details h4 {
+      color: #f4c75a;
+      margin-top: 0;
+    }
+
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin: 10px 0;
       font-size: 14px;
     }
 
-footer {
-  background: #171717;
-  color: #f4c75a;
-  text-align: center;
-  padding: 22px 12px;
-  margin-top: 20px;
-}
+    .instagram-btn {
+      width: 100%;
+      margin-top: 12px;
+      padding: 11px;
+      background: #555555;
+      color: #cccccc;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: not-allowed;
+      opacity: 0.7;
+    }
 
+    .coming-soon {
+      font-size: 12px;
+      color: #f4c75a;
+      margin-bottom: 0;
+    }
+
+    .note {
+      text-align: center;
+      padding: 15px;
+      color: #f4c75a;
+      font-size: 14px;
+    }
+
+    footer {
+      background: #171717;
+      color: #f4c75a;
+      text-align: center;
+      padding: 22px 12px;
+      margin-top: 20px;
+    }
   </style>
 </head>
+
 <body>
+
   <header>
     <h1>🍌 Homie's Crisp</h1>
     <p>Crunchy taste in Every Bite!</p>
@@ -94,51 +158,145 @@ footer {
 
   <section class="hero">
     <h2>Fresh, Crunchy & Delicious!</h2>
-    <p>Enjoy our homemade banana chips.<br>
-    Made with love, perfect for snack time!</p>
+    <p>
+      Enjoy our homemade banana chips.<br>
+      Made with love, perfect for snack time!
+    </p>
   </section>
 
   <section class="products">
     <h2>Our Flavours 😋</h2>
+
     <div class="grid">
+
+      <!-- Peri Peri -->
       <div class="card">
-        <img src="1793279920105.jpg" alt="Peri Peri Banana Chips" style="width:100%; height:190px; object-fit:cover; border-radius:12px;">
+        <img src="1793279920105.jpg"
+          alt="Peri Peri Banana Chips"
+          style="width:100%; height:190px; object-fit:cover; border-radius:12px;">
+
         <h3>Peri Peri</h3>
         <p>Spicy, tasty and crunchy!</p>
         <p class="price">₹50</p>
         <p>100 grams</p>
-        <a class="order" href="#contact">Order details</a>
+
+        <button class="order" onclick="toggleDetails('peri')">
+          Order Details
+        </button>
+
+        <div class="order-details" id="peri">
+          <h4>Order Summary ❤️</h4>
+          <div class="detail-row">
+            <span>Quantity</span>
+            <strong>1 Packet</strong>
+          </div>
+          <div class="detail-row">
+            <span>Weight</span>
+            <strong>100 Grams</strong>
+          </div>
+          <div class="detail-row">
+            <span>Total Price</span>
+            <strong>₹50</strong>
+          </div>
+          <button class="instagram-btn" disabled>
+            DM FOR ORDER ON INSTAGRAM
+          </button>
+          <p class="coming-soon">Instagram ordering coming soon!</p>
+        </div>
       </div>
 
+      <!-- Simply Salted -->
       <div class="card">
-        <img src="1793279923704.jpg" alt="Simply Salted Banana Chips" style="width:100%; height:190px; object-fit:cover; border-radius:12px;">
+        <img src="1793279923704.jpg"
+          alt="Simply Salted Banana Chips"
+          style="width:100%; height:190px; object-fit:cover; border-radius:12px;">
+
         <h3>Simply Salted</h3>
         <p>Classic salty crunch!</p>
         <p class="price">₹50</p>
         <p>100 grams</p>
-        <a class="order" href="#contact">Order details</a>
+
+        <button class="order" onclick="toggleDetails('salted')">
+          Order Details
+        </button>
+
+        <div class="order-details" id="salted">
+          <h4>Order Summary ❤️</h4>
+          <div class="detail-row">
+            <span>Quantity</span>
+            <strong>1 Packet</strong>
+          </div>
+          <div class="detail-row">
+            <span>Weight</span>
+            <strong>100 Grams</strong>
+          </div>
+          <div class="detail-row">
+            <span>Total Price</span>
+            <strong>₹50</strong>
+          </div>
+          <button class="instagram-btn" disabled>
+            DM FOR ORDER ON INSTAGRAM
+          </button>
+          <p class="coming-soon">Instagram ordering coming soon!</p>
+        </div>
       </div>
 
+      <!-- Maggi Flavour -->
       <div class="card">
-        <img src="1793279917471.jpg" alt="Maggi Flavour Banana Chips" style="width:100%; height:190px; object-fit:cover; border-radius:12px;">
+        <img src="1793279917471.jpg"
+          alt="Maggi Flavour Banana Chips"
+          style="width:100%; height:190px; object-fit:cover; border-radius:12px;">
+
         <h3>Maggi Flavour</h3>
         <p>Masaledaar and yummy!</p>
         <p class="price">₹50</p>
         <p>100 grams</p>
-        <a class="order" href="#contact">Order details</a>
+
+        <button class="order" onclick="toggleDetails('maggi')">
+          Order Details
+        </button>
+
+        <div class="order-details" id="maggi">
+          <h4>Order Summary ❤️</h4>
+          <div class="detail-row">
+            <span>Quantity</span>
+            <strong>1 Packet</strong>
+          </div>
+          <div class="detail-row">
+            <span>Weight</span>
+            <strong>100 Grams</strong>
+          </div>
+          <div class="detail-row">
+            <span>Total Price</span>
+            <strong>₹50</strong>
+          </div>
+          <button class="instagram-btn" disabled>
+            DM FOR ORDER ON INSTAGRAM
+          </button>
+          <p class="coming-soon">Instagram ordering coming soon!</p>
+        </div>
       </div>
+
     </div>
   </section>
 
-  <section class="note" id="contact">
+  <section class="note">
     <h2>Want to order? ❤️</h2>
     <p>For orders and enquiries, contact us soon!</p>
-    <p>WhatsApp ordering will be available shortly.</p>
+    <p>Online ordering coming soon!</p>
   </section>
 
   <footer>
     <p>© 2026 Homie's Crisp</p>
     <p>Made with ❤️ for snack lovers</p>
   </footer>
+
+  <script>
+    function toggleDetails(id) {
+      const selected = document.getElementById(id);
+      selected.classList.toggle('show');
+    }
+  </script>
+
 </body>
 </html>
