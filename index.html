@@ -1,13 +1,15 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Homie's Crisp | Homemade Banana Chips</title>
 
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
@@ -28,7 +30,9 @@
       font-size: 36px;
     }
 
-    header p { margin-bottom: 0; }
+    header p {
+      margin-bottom: 0;
+    }
 
     .hero {
       text-align: center;
@@ -37,8 +41,13 @@
       color: #171717;
     }
 
-    .hero h2 { font-size: 28px; }
-    .hero p { line-height: 1.6; }
+    .hero h2 {
+      font-size: 28px;
+    }
+
+    .hero p {
+      line-height: 1.6;
+    }
 
     .products {
       padding: 25px 16px;
@@ -46,7 +55,9 @@
       margin: auto;
     }
 
-    .products h2 { text-align: center; }
+    .products h2 {
+      text-align: center;
+    }
 
     .grid {
       display: grid;
@@ -105,18 +116,61 @@
       margin-top: 0;
     }
 
+    .quantity-control {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      margin: 18px 0;
+    }
+
+    .quantity-control button {
+      width: 40px;
+      height: 40px;
+      border: 1px solid #d4af37;
+      border-radius: 8px;
+      background: #174b32;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .quantity-control button:active {
+      transform: scale(0.95);
+    }
+
+    .quantity-control span {
+      font-size: 21px;
+      font-weight: bold;
+      min-width: 25px;
+    }
+
     .detail-row {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       gap: 10px;
-      margin: 10px 0;
+      margin: 12px 0;
       font-size: 14px;
+      text-align: left;
+    }
+
+    .detail-row strong {
+      color: #f4c75a;
+      text-align: right;
+    }
+
+    .total-row {
+      border-top: 1px solid #d4af37;
+      padding-top: 12px;
+      margin-top: 15px;
+      font-size: 17px;
     }
 
     .instagram-btn {
       width: 100%;
-      margin-top: 12px;
-      padding: 11px;
+      margin-top: 15px;
+      padding: 12px;
       background: #555555;
       color: #cccccc;
       border: none;
@@ -145,34 +199,7 @@
       text-align: center;
       padding: 22px 12px;
       margin-top: 20px;
-    } .quantity-control {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 18px;
-  margin: 15px 0;
-}
-
-.quantity-control button {
-  width: 38px;
-  height: 38px;
-  border: 1px solid #d4af37;
-  border-radius: 8px;
-  background: #174b32;
-  color: white;
-  font-size: 22px;
-  cursor: pointer;
-}
-
-.quantity-control span {
-  font-size: 20px;
-  font-weight: bold;
-  min-width: 25px;
-}
-
-.order-details .detail-row strong {
-  color: #f4c75a;
-}
+    }
   </style>
 </head>
 
@@ -192,12 +219,14 @@
   </section>
 
   <section class="products">
+
     <h2>Our Flavours 😋</h2>
 
     <div class="grid">
 
-      <!-- Peri Peri -->
+      <!-- PERI PERI -->
       <div class="card">
+
         <img src="1793279920105.jpg"
           alt="Peri Peri Banana Chips"
           style="width:100%; height:190px; object-fit:cover; border-radius:12px;">
@@ -212,54 +241,50 @@
         </button>
 
         <div class="order-details" id="peri">
-        <div class="order-details" id="peri">
-  <h4>Order Summary ❤️</h4>
 
-  <div class="quantity-control">
-    <button onclick="changeQty('peri', -1)">−</button>
-    <span id="qty-peri">1</span>
-    <button onclick="changeQty('peri', 1)">+</button>
-  </div>
+          <h4>Order Summary ❤️</h4>
 
-  <div class="detail-row">
-    <span>Price per packet</span>
-    <strong>₹50</strong>
-  </div>
+          <div class="quantity-control">
+            <button onclick="changeQty('peri', -1)">−</button>
+            <span id="qty-peri">1</span>
+            <button onclick="changeQty('peri', 1)">+</button>
+          </div>
 
-  <div class="detail-row">
-    <span>Selected quantity</span>
-    <strong id="count-peri">1 Packet</strong>
-  </div>
-
-  <div class="detail-row">
-    <span>Total weight</span>
-    <strong id="weight-peri">100 Grams</strong>
-  </div>
-
-  <div class="detail-row">
-    <span>Total Price</span>
-    <strong id="total-peri">₹50</strong>
-  </div>
-
-  <button class="instagram-btn" disabled>
-    DM FOR ORDER ON INSTAGRAM
-  </button>
-
-  <p class="coming-soon">Instagram ordering coming soon!</p>
-</div>
           <div class="detail-row">
-            <span>Total Price</span>
+            <span>Price per packet</span>
             <strong>₹50</strong>
           </div>
+
+          <div class="detail-row">
+            <span>Selected quantity</span>
+            <strong id="count-peri">1 Packet</strong>
+          </div>
+
+          <div class="detail-row">
+            <span>Total weight</span>
+            <strong id="weight-peri">100 Grams</strong>
+          </div>
+
+          <div class="detail-row total-row">
+            <span>Total Price</span>
+            <strong id="total-peri">₹50</strong>
+          </div>
+
           <button class="instagram-btn" disabled>
             DM FOR ORDER ON INSTAGRAM
           </button>
-          <p class="coming-soon">Instagram ordering coming soon!</p>
+
+          <p class="coming-soon">
+            Instagram ordering coming soon!
+          </p>
+
         </div>
       </div>
 
-      <!-- Simply Salted -->
+
+      <!-- SIMPLY SALTED -->
       <div class="card">
+
         <img src="1793279923704.jpg"
           alt="Simply Salted Banana Chips"
           style="width:100%; height:190px; object-fit:cover; border-radius:12px;">
@@ -274,28 +299,50 @@
         </button>
 
         <div class="order-details" id="salted">
+
           <h4>Order Summary ❤️</h4>
-          <div class="detail-row">
-            <span>Quantity</span>
-            <strong>1 Packet</strong>
+
+          <div class="quantity-control">
+            <button onclick="changeQty('salted', -1)">−</button>
+            <span id="qty-salted">1</span>
+            <button onclick="changeQty('salted', 1)">+</button>
           </div>
+
           <div class="detail-row">
-            <span>Weight</span>
-            <strong>100 Grams</strong>
-          </div>
-          <div class="detail-row">
-            <span>Total Price</span>
+            <span>Price per packet</span>
             <strong>₹50</strong>
           </div>
+
+          <div class="detail-row">
+            <span>Selected quantity</span>
+            <strong id="count-salted">1 Packet</strong>
+          </div>
+
+          <div class="detail-row">
+            <span>Total weight</span>
+            <strong id="weight-salted">100 Grams</strong>
+          </div>
+
+          <div class="detail-row total-row">
+            <span>Total Price</span>
+            <strong id="total-salted">₹50</strong>
+          </div>
+
           <button class="instagram-btn" disabled>
             DM FOR ORDER ON INSTAGRAM
           </button>
-          <p class="coming-soon">Instagram ordering coming soon!</p>
+
+          <p class="coming-soon">
+            Instagram ordering coming soon!
+          </p>
+
         </div>
       </div>
 
-      <!-- Maggi Flavour -->
+
+      <!-- MAGGI FLAVOUR -->
       <div class="card">
+
         <img src="1793279917471.jpg"
           alt="Maggi Flavour Banana Chips"
           style="width:100%; height:190px; object-fit:cover; border-radius:12px;">
@@ -310,28 +357,49 @@
         </button>
 
         <div class="order-details" id="maggi">
+
           <h4>Order Summary ❤️</h4>
-          <div class="detail-row">
-            <span>Quantity</span>
-            <strong>1 Packet</strong>
+
+          <div class="quantity-control">
+            <button onclick="changeQty('maggi', -1)">−</button>
+            <span id="qty-maggi">1</span>
+            <button onclick="changeQty('maggi', 1)">+</button>
           </div>
+
           <div class="detail-row">
-            <span>Weight</span>
-            <strong>100 Grams</strong>
-          </div>
-          <div class="detail-row">
-            <span>Total Price</span>
+            <span>Price per packet</span>
             <strong>₹50</strong>
           </div>
+
+          <div class="detail-row">
+            <span>Selected quantity</span>
+            <strong id="count-maggi">1 Packet</strong>
+          </div>
+
+          <div class="detail-row">
+            <span>Total weight</span>
+            <strong id="weight-maggi">100 Grams</strong>
+          </div>
+
+          <div class="detail-row total-row">
+            <span>Total Price</span>
+            <strong id="total-maggi">₹50</strong>
+          </div>
+
           <button class="instagram-btn" disabled>
             DM FOR ORDER ON INSTAGRAM
           </button>
-          <p class="coming-soon">Instagram ordering coming soon!</p>
+
+          <p class="coming-soon">
+            Instagram ordering coming soon!
+          </p>
+
         </div>
       </div>
 
     </div>
   </section>
+
 
   <section class="note">
     <h2>Want to order? ❤️</h2>
@@ -339,16 +407,50 @@
     <p>Online ordering coming soon!</p>
   </section>
 
+
   <footer>
     <p>© 2026 Homie's Crisp</p>
     <p>Made with ❤️ for snack lovers</p>
   </footer>
 
+
   <script>
+
+    // Show and hide order details
     function toggleDetails(id) {
       const selected = document.getElementById(id);
       selected.classList.toggle('show');
     }
+
+    // Each flavour has its own quantity
+    const quantities = {
+      peri: 1,
+      salted: 1,
+      maggi: 1
+    };
+
+    // Update quantity, weight and price
+    function changeQty(id, change) {
+
+      quantities[id] = Math.max(
+        1,
+        Math.min(99, quantities[id] + change)
+      );
+
+      const qty = quantities[id];
+
+      document.getElementById('qty-' + id).textContent = qty;
+
+      document.getElementById('count-' + id).textContent =
+        qty + (qty === 1 ? ' Packet' : ' Packets');
+
+      document.getElementById('weight-' + id).textContent =
+        (qty * 100) + ' Grams';
+
+      document.getElementById('total-' + id).textContent =
+        '₹' + (qty * 50);
+    }
+
   </script>
 
 </body>
